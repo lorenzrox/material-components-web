@@ -83,7 +83,6 @@ export class MDCListFoundation extends MDCFoundation<MDCListAdapter> {
       hasCheckboxAtIndex: () => false,
       hasRadioAtIndex: () => false,
       isCheckboxCheckedAtIndex: () => false,
-      isRadioCheckedAtIndex: () => false,
       isFocusInsideList: () => false,
       isRootFocused: () => false,
       listItemAtIndexHasClass: () => false,
@@ -126,9 +125,9 @@ export class MDCListFoundation extends MDCFoundation<MDCListAdapter> {
 
     // TODO(b/172274142): consider all items when determining the list's type.
     if (this.adapter.hasCheckboxAtIndex(0)) {
-      this.initializeCheckboxSelection();
+      this.isCheckboxList = true;
     } else if (this.adapter.hasRadioAtIndex(0)) {
-      this.initializeRadioSelection();
+      this.isRadioList = true;
     } else {
       this.maybeInitializeSingleSelection();
     }
@@ -169,18 +168,6 @@ export class MDCListFoundation extends MDCFoundation<MDCListAdapter> {
     this.areDisabledItemsFocusable = value;
   }
 
-  private initializeCheckboxSelection() {
-    this.isCheckboxList = true;
-    this.selectedIndex = this.getCheckedIndexesFromDOM();
-  }
-
-  private initializeRadioSelection() {
-    const selectedItemIndexes = this.getRadionSelectedIndexFromDOM();
-
-    this.isRadioList = true;
-    this.selectedIndex = selectedItemIndexes;
-  }
-
   /**
    * Automatically determines whether the list is single selection list. If so,
    * initializes the internal state to match the selected item.
@@ -216,34 +203,6 @@ export class MDCListFoundation extends MDCFoundation<MDCListAdapter> {
     }
 
     return selectedIndex;
-  }
-
-  private getRadionSelectedIndexFromDOM() {
-    let selectedIndex = numbers.UNSET_INDEX;
-    const listItemsCount = this.adapter.getListItemCount();
-    for (let i = 0; i < listItemsCount; i++) {
-      if (!this.adapter.isRadioCheckedAtIndex(i)) {
-        continue;
-      }
-
-      selectedIndex = i;
-      break;
-    }
-
-    return selectedIndex;
-  }
-
-  private getCheckedIndexesFromDOM() {
-    const selectedIndexes: number[] = [];
-
-    const listItemsCount = this.adapter.getListItemCount();
-    for (let i = 0; i < listItemsCount; i++) {
-      if (this.adapter.isCheckboxCheckedAtIndex(i)) {
-        selectedIndexes.push(i);
-      }
-    }
-
-    return selectedIndexes;
   }
 
   /**

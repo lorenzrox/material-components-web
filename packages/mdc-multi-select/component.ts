@@ -304,7 +304,6 @@ export class MDCMultiSelect extends MDCComponent<MDCMultiSelectFoundation> {
         this.menuElement = this.root.querySelector(strings.MENU_SELECTOR)!;
         this.menu = menuFactory(this.menuElement);
         this.menu.hasTypeahead = true;
-        this.menu.singleSelection = true;
         this.menuItemValues =
             this.menu.items.map((el) => el.getAttribute(strings.VALUE_ATTR) || '');
     }
