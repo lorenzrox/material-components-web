@@ -28,6 +28,7 @@
 @use '@material/circular-progress/mdc-circular-progress';
 // Select's styles must be emitted before datatable's due to equal specificity.
 @use '@material/select/mdc-select';
+@use '@material/multi-select/mdc-multi-select';
 @use '@material/data-table/mdc-data-table';
 @use '@material/dialog/mdc-dialog';
 @use '@material/drawer/mdc-drawer';

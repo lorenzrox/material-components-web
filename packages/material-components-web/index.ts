@@ -44,6 +44,7 @@ import * as radio from '@material/radio/index';
 import * as ripple from '@material/ripple/index';
 import * as segmentedButton from '@material/segmented-button/index';
 import * as select from '@material/select/index';
+import * as multiSelect from '@material/multi-select/index';
 import * as slider from '@material/slider/index';
 import * as snackbar from '@material/snackbar/index';
 import * as switchControl from '@material/switch/index';
@@ -77,6 +78,7 @@ autoInit.register('MDCRadio', radio.MDCRadio);
 autoInit.register('MDCRipple', ripple.MDCRipple);
 autoInit.register('MDCSegmentedButton', segmentedButton.MDCSegmentedButton);
 autoInit.register('MDCSelect', select.MDCSelect);
+autoInit.register('MDCMultiSelect', multiSelect.MDCMultiSelect);
 autoInit.register('MDCSlider', slider.MDCSlider);
 autoInit.register('MDCSnackbar', snackbar.MDCSnackbar);
 autoInit.register('MDCSwitch', switchControl.MDCSwitch);
@@ -110,6 +112,7 @@ export {
   ripple,
   segmentedButton,
   select,
+  multiSelect,
   slider,
   snackbar,
   switchControl,
