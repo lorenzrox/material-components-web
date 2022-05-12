@@ -201,6 +201,7 @@ class JsBundleFactory {
         'ripple': getAbsolutePath('/packages/mdc-ripple/index.ts'),
         'segmented-button': getAbsolutePath('/packages/mdc-segmented-button/index.ts'),
         'select': getAbsolutePath('/packages/mdc-select/index.ts'),
+        'multi-select': getAbsolutePath('/packages/mdc-multi-select/index.ts'),
         'slider': getAbsolutePath('/packages/mdc-slider/index.ts'),
         'snackbar': getAbsolutePath('/packages/mdc-snackbar/index.ts'),
         'switch': getAbsolutePath('/packages/mdc-switch/index.ts'),
