@@ -96,7 +96,7 @@ There are two types of tooltips:
 ```html
 <div id="tooltip-id" class="mdc-tooltip" role="tooltip" aria-hidden="true">
   <div class="mdc-tooltip__surface mdc-tooltip__surface-animation">
-    lorem ipsum dolor
+    <span class="mdc-tooltip__label">lorem ipsum dolor<span>
   </div>
 </div>
 ```
@@ -184,7 +184,7 @@ Default rich tooltip with interactive content
           <a class="mdc-tooltip__content-link" href="google.com">link</a>
         </p>
         <div class="mdc-tooltip--rich-actions">
-            <button class="mdc-button">
+            <button class="mdc-button mdc-tooltip--rich-action">
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__focus-ring"></span>
               <span class="mdc-button__label">Action</span>
@@ -217,7 +217,7 @@ Persistent rich tooltip with interactive content
           <a class="mdc-tooltip__content-link" href="google.com">link</a>
         </p>
         <div class="mdc-tooltip--rich-actions">
-          <button class="mdc-button">
+          <button class="mdc-button mdc-tooltip--rich-action">
             <div class="mdc-button__ripple"></div>
             <span class="mdc-button__focus-ring"></span>
             <span class="mdc-button__label">Action</span>
@@ -262,7 +262,7 @@ second time from the tooltip).
 
 <div id="tooltip-id" class="mdc-tooltip" role="tooltip" aria-hidden="true">
   <div class="mdc-tooltip__surface mdc-tooltip__surface-animation">
-    toggle favorite
+    <span class="mdc-tooltip__label">toggle favorite</span>
   </div>
 </div>
 ```
